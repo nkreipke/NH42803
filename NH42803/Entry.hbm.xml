@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="NH42803"
+                   namespace="NH42803">
+
+    <class name="Entry" table="entry">
+        <id name="Id">
+            <generator class="guid"/>
+        </id>
+        <many-to-one name="Update" class="Update" column="update_id" not-null="true" />
+        <property name="Target" column="target"/>
+    </class>
+
+</hibernate-mapping>
+

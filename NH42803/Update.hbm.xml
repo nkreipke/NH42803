@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2"
+                   assembly="NH42803"
+                   namespace="NH42803">
+
+    <class name="Update" table="update">
+        <id name="Id">
+            <generator class="guid"/>
+        </id>
+
+        <set name="Entries" inverse="true" cascade="all">
+            <key column="update_id" not-null="true" />
+            <one-to-many class="Entry" />
+        </set>
+        <property name="Date" column="date"/>
+    </class>
+
+</hibernate-mapping>
+
